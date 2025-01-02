@@ -1,0 +1,28 @@
+import statistics
+
+# Dataset: Ages of 10 students
+student_ages = [18, 20, 19, 22, 21, 23, 20, 19, 24, 18]
+
+# 1. Students average age
+average_age = sum(student_ages) / len(student_ages)
+
+# 2. Mean of the students
+mean_age = statistics.mean(student_ages)
+
+# 3. Median of the students
+median_age = statistics.median(student_ages)
+
+# 4. Students with higher and lower age
+highest_age = max(student_ages)
+lowest_age = min(student_ages)
+students_higher_age = [age for age in student_ages if age == highest_age]
+students_lower_age = [age for age in student_ages if age == lowest_age]
+
+# Displaying the results
+print("Dataset of ages:", student_ages)
+print(f"1. Average age: {average_age:.2f}")
+print(f"2. Mean age: {mean_age}")
+print(f"3. Median age: {median_age}")
+print(f"4. Highest age: {highest_age}, Lowest age: {lowest_age}")
+print(f"   Students with highest age: {students_higher_age}")
+print(f"   Students with lowest age: {students_lower_age}")

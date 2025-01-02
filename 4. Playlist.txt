@@ -1,0 +1,80 @@
+import random
+
+
+def Menu():
+    print("1. Create a playlist")
+    print("2. Add a song")
+    print("3. Delete a song")
+    print("4. Play a particular song")
+    print("5. Shuffle the playlist")
+    print("6. Play the songs sequentially")
+    print("0. Exit")
+
+
+def create_playlist():
+    return []
+
+
+def add_song(playlist):
+    song = input("Enter the name of the song to add: ")
+    playlist.append(song)
+    print(f"{song} has been added to the playlist.")
+
+
+def delete_song(playlist):
+    song = input("Enter the name of the song to delete: ")
+    if song in playlist:
+        playlist.remove(song)
+        print(f"{song} has been deleted from the playlist.")
+    else:
+        print(f"{song} is not in the playlist.")
+
+
+def play_song(playlist):
+    song = input("Enter the name of the song to play: ")
+    if song in playlist:
+        print(f"Playing {song}...")
+    else:
+        print(f"{song} is not in the playlist.")
+
+
+def shuffle_playlist(playlist):
+    random.shuffle(playlist)
+    print("Playlist has been shuffled.")
+
+
+def play_sequentially(playlist):
+    if not playlist:
+        print("The playlist is empty.")
+    else:
+        print("Playing songs sequentially:")
+        for song in playlist:
+            print(f"Playing {song}...")
+
+
+def main():
+    playlist = create_playlist() 
+    while True:
+        Menu()
+        choice = input("Choose an option: ")
+        if choice == '1':
+            playlist_name = input("Tell me the name of playlist you want: ")
+            print(f"{playlist_name} Playlist created.")
+        elif choice == '2':
+            add_song(playlist)
+        elif choice == '3':
+            delete_song(playlist)
+        elif choice == '4':
+            play_song(playlist)
+        elif choice == '5':
+            shuffle_playlist(playlist)
+        elif choice == '6':
+            play_sequentially(playlist)
+        elif choice == '0':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid option. Please try again.")
+
+if __name__ == "__main__":
+    main()

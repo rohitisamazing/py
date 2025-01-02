@@ -1,0 +1,35 @@
+import string
+
+# Function to classify reviews
+def classify_review(review):
+    # Remove punctuation and convert to lowercase
+    review_cleaned = review.translate(str.maketrans('', '', string.punctuation)).lower()
+
+    # Split into words
+    words = review_cleaned.split()
+
+    # Check for positive, negative, or neutral reviews
+    if 'good' in words or 'great' in words:
+        print("Positive review:", review)
+    elif 'bad' in words or 'horrible' in words:
+        print("Negative review:", review)
+    else:
+        print("Neutral review:", review)
+
+# Main program
+if __name__ == "__main__":
+    # Sample customer reviews
+    reviews = """
+    The product quality is great, I really loved it!
+    Delivery was bad and late.
+    It's just okay, nothing too good or bad.
+    Horrible experience, will not recommend!
+    A good buy for the price.
+    """
+
+    # Split the reviews into individual reviews
+    reviews_list = reviews.strip().split('\n')
+
+    # Classify each review
+    for review in reviews_list:
+        classify_review(review)

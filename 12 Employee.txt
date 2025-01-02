@@ -1,0 +1,73 @@
+class EMPLOYEE:
+    # Class variables to store all employees and counts
+    employees = []
+    total_male = 0
+    total_female = 0
+
+    def __init__(self, name, designation, gender, date_of_joining, salary):
+        """
+        Constructor to initialize the EMPLOYEE attributes.
+        """
+        self.name = name
+        self.designation = designation
+        self.gender = gender
+        self.date_of_joining = date_of_joining
+        self.salary = salary
+
+        # Add employee to the employees list
+        EMPLOYEE.employees.append(self)
+
+        # Update gender counts
+        if self.gender.lower() == 'male':
+            EMPLOYEE.total_male += 1
+        elif self.gender.lower() == 'female':
+            EMPLOYEE.total_female += 1
+
+    @classmethod
+    def total_employees(cls):
+        """
+        Compute total number of employees.
+        """
+        return len(cls.employees)
+
+    @classmethod
+    def count_gender(cls):
+        """
+        Compute count of male and female employees.
+        """
+        return cls.total_male, cls.total_female
+
+    @classmethod
+    def salary_above_10000(cls):
+        """
+        List employees with a salary above 10,000.
+        """
+        return [emp.name for emp in cls.employees if emp.salary > 10000]
+
+    @classmethod
+    def assistant_managers(cls):
+        """
+        List employees with the designation "Assistant Manager."
+        """
+        return [emp.name for emp in cls.employees if emp.designation.lower() == "assistant manager"]
+
+# Example usage
+if __name__ == "__main__":
+    # Adding employees
+    emp1 = EMPLOYEE("John Doe", "Manager", "Male", "2020-05-12", 15000)
+    emp2 = EMPLOYEE("Jane Smith", "Assistant Manager", "Female", "2019-03-25", 12000)
+    emp3 = EMPLOYEE("Alice Johnson", "Assistant Manager", "Female", "2021-08-15", 9500)
+    emp4 = EMPLOYEE("Bob Brown", "Clerk", "Male", "2022-01-10", 8000)
+
+    # Total number of employees
+    print(f"Total employees: {EMPLOYEE.total_employees()}")
+
+    # Count of male and female employees
+    male_count, female_count = EMPLOYEE.count_gender()
+    print(f"Male employees: {male_count}, Female employees: {female_count}")
+
+    # Employees with salary more than 10,000
+    print(f"Employees with salary > 10,000: {EMPLOYEE.salary_above_10000()}")
+
+    # Employees with designation "Assistant Manager"
+    print(f"Assistant Managers: {EMPLOYEE.assistant_managers()}")

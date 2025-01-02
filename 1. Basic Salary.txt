@@ -1,0 +1,6 @@
+basicsalary = int(input("Enter basic salry: "))
+hra = basicsalary*10/100
+ta=basicsalary*5/100
+pt=basicsalary*2/100
+grosssalary = basicsalary+hra+ta+pt
+print("The gross salary of the employee is",grosssalary)

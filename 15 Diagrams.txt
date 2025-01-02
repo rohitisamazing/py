@@ -1,0 +1,48 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate sample dataset using NumPy
+np.random.seed(42)  # For reproducibility
+x = np.arange(1, 11)  # Numbers from 1 to 10
+y = np.random.randint(10, 100, size=10)  # Random integers between 10 and 100
+
+# Line Plot
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, color='blue', marker='o', linestyle='-', label='Line Plot')
+plt.title("Line Plot Example", fontsize=14)
+plt.xlabel("X-axis", fontsize=12)
+plt.ylabel("Y-axis", fontsize=12)
+plt.legend()
+plt.grid()
+plt.show()
+
+# Bar Plot
+plt.figure(figsize=(10, 6))
+plt.bar(x, y, color='orange', label='Bar Plot')
+plt.title("Bar Plot Example", fontsize=14)
+plt.xlabel("Categories (X-axis)", fontsize=12)
+plt.ylabel("Values (Y-axis)", fontsize=12)
+plt.legend()
+plt.grid(axis='y')
+plt.show()
+
+# Scatter Plot
+plt.figure(figsize=(10, 6))
+plt.scatter(x, y, color='green', label='Scatter Plot')
+plt.title("Scatter Plot Example", fontsize=14)
+plt.xlabel("X-axis", fontsize=12)
+plt.ylabel("Y-axis", fontsize=12)
+plt.legend()
+plt.grid()
+plt.show()
+
+# Histogram
+data = np.random.normal(loc=50, scale=15, size=1000)  # Normal distribution (mean=50, std=15)
+plt.figure(figsize=(10, 6))
+plt.hist(data, bins=20, color='purple', edgecolor='black', label='Histogram')
+plt.title("Histogram Example", fontsize=14)
+plt.xlabel("Bins", fontsize=12)
+plt.ylabel("Frequency", fontsize=12)
+plt.legend()
+plt.grid(axis='y')
+plt.show()

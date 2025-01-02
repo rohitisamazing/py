@@ -1,0 +1,39 @@
+library = [
+    {'title': 'Book A', 'author': 'Author A', 'cost': 300},
+    {'title': 'Book B', 'author': 'Author B', 'cost': 500},
+    {'title': 'Book C', 'author': 'Author C', 'cost': 400},
+    {'title': 'Book A', 'author': 'Author A', 'cost': 300},  # Duplicate
+    {'title': 'Book B', 'author': 'Author B', 'cost': 500},  # Duplicate
+    {'title': 'Book D', 'author': 'Author D', 'cost': 700},
+]
+
+def remove_dup(library):
+    unique = []
+    visited = []
+    for book in library:
+        if book["title"] not in visited:
+            visited.append(book["title"])
+            unique.append(book)
+    return unique
+
+def display_ascending_cost(library):
+    sorted_books = sorted(library, key=lambda x: x["cost"])
+    print("Books sorted by cost: ")
+    for book in sorted_books:
+        print(f"Title: {book['title']}, Author: {book['author']}, Cost: {book['cost']}")
+
+def count_books_with_cost_500(library):
+    count = 0
+    for book in library:
+        if book['cost'] == 500:
+            count += 1
+    return count
+
+# Remove duplicates
+library = remove_dup(library)
+print("Library after removing duplicates:")
+display_ascending_cost(library)
+
+# Count books with a cost of 500
+count = count_books_with_cost_500(library)
+print(f"\nNumber of books with cost 500 is: {count}")

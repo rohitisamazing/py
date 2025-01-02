@@ -1,0 +1,30 @@
+def linear_search(arr, target):
+    """Returns the index of the target value if found, -1 otherwise."""
+    for i, value in enumerate(arr):
+        if value == target:
+            return i
+    return -1
+
+if __name__ == "__main__":
+    arr = [10, 20, 30, 40, 50]
+    target = 30
+    result = linear_search(arr, target)
+    print(f"Value {target} found at index {result}" if result != -1 else f"Value {target} not found")
+    
+    
+# def linear_search(arr, target):
+#     for i, value in enumerate(arr):
+#         if value == target:
+#             return i
+#     return -1         
+    
+
+# if __name__ == "__main__":
+#     n = int(input("Enter size of array"))
+#     arr = []
+#     for i in range(n):
+#         arr.append(int(input(f"Enter arry value at {i} index: ")))
+#     target = int(input("Enter target: "))    
+#     result = linear_search(arr, target)
+#     print(f"Value {target} found at index {result}" if result != -1 else f"Value not found!!!")
+    

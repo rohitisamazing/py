@@ -1,0 +1,21 @@
+class Pet:
+    def __init__(self, name, pet_type, price):
+        
+        self.name = name
+        self.type = pet_type
+        self.price = price
+
+    def display_details(self):
+        
+        print(f"Pet Name: {self.name}")
+        print(f"Pet Type: {self.type}")
+        print(f"Pet Price: ${self.price:.2f}")
+
+
+
+if __name__ == "__main__":
+    # Creating a Pet object
+    pet1 = Pet("Buddy", "Dog", 500.0)
+
+    # Displaying the pet details
+    pet1.display_details()

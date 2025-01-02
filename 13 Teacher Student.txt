@@ -1,0 +1,38 @@
+# Parent class
+class Person:
+    def __init__(self, age, gender):
+        """
+        Constructor to initialize the attributes of the Person class.
+        :param age: int, age of the person
+        :param gender: str, gender of the person
+        """
+        self.age = age
+        self.gender = gender
+
+# Derived class for Teacher
+class Teacher(Person):
+    def teaches(self):
+        """
+        Method specific to Teacher class.
+        """
+        print("I am a teacher")
+
+# Derived class for Student
+class Student(Person):
+    def studies(self):
+        """
+        Method specific to Student class.
+        """
+        print("I study")
+
+# Example usage
+if __name__ == "__main__":
+    # Create an instance of Teacher
+    teacher = Teacher(age=40, gender="Male")
+    print(f"Teacher - Age: {teacher.age}, Gender: {teacher.gender}")
+    teacher.teaches()
+
+    # Create an instance of Student
+    student = Student(age=20, gender="Female")
+    print(f"Student - Age: {student.age}, Gender: {student.gender}")
+    student.studies()

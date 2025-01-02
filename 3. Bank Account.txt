@@ -1,0 +1,28 @@
+balance = 0
+
+min_balance = 500
+
+
+
+while True:
+    
+    transaction = input("Enter transaction (D/W amount) or exit \n").split()
+
+    if transaction[0].lower() == "exit":
+        break
+    
+    action, amount = transaction[0].upper(), int(transaction[1])
+    
+    if action == 'D':
+        balance += amount
+        print(f"Deposited: {amount}. New balance is: {balance}")
+    elif action == 'W':
+        if balance < min_balance:
+                print("Cannot withdraw because min balance is not maintained at 500")
+        else:
+            balance -= amount
+            print(f"Successfully withdrawed {amount}. New balance is: {balance}")
+    else:
+        print("INVALID CHOICE")
+    
+print("Final balance is ", balance)    
