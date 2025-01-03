@@ -1,0 +1,18 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Data
+x = np.arange(1, 11)
+y = np.random.randint(10, 100, 10)
+
+# Line Plot
+plt.plot(x, y); plt.show()
+
+# Bar Plot
+plt.bar(x, y); plt.show()
+
+# Scatter Plot
+plt.scatter(x, y); plt.show()
+
+# Histogram
+plt.hist(np.random.normal(50, 15, 1000), edgecolor='black'); plt.show()
