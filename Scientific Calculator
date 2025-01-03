@@ -1,0 +1,48 @@
+import math
+
+def scientific_calculator():
+    print("Scientific Calculator")
+    print("Available operations:")
+    print("1. Addition (+)\n2. Subtraction (-)\n3. Multiplication (*)\n4. Division (/)")
+    print("5. Power (**)\n6. Square Root (sqrt)\n7. Sine (sin)\n8. Cosine (cos)")
+    print("9. Tangent (tan)\n10. Logarithm (log)")
+
+    choice = input("\nEnter your operation (e.g., +, -, *, /, **, sqrt, sin, cos, tan, log): ").strip()
+
+    if choice in ['+', '-', '*', '/', '**']:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+        if choice == '+':
+            result = num1 + num2
+        elif choice == '-':
+            result = num1 - num2
+        elif choice == '*':
+            result = num1 * num2
+        elif choice == '/':
+            result = num1 / num2
+        elif choice == '**':
+            result = num1 ** num2
+    elif choice == 'sqrt':
+        num = float(input("Enter a number: "))
+        result = math.sqrt(num)
+    elif choice == 'sin':
+        num = float(input("Enter an angle in degrees: "))
+        result = math.sin(math.radians(num))
+    elif choice == 'cos':
+        num = float(input("Enter an angle in degrees: "))
+        result = math.cos(math.radians(num))
+    elif choice == 'tan':
+        num = float(input("Enter an angle in degrees: "))
+        result = math.tan(math.radians(num))
+    elif choice == 'log':
+        num = float(input("Enter a number: "))
+        base = float(input("Enter the base (default is 10, press Enter to skip): ") or 10)
+        result = math.log(num, base)
+    else:
+        print("Invalid operation!")
+        return
+
+    print(f"Result: {result}")
+
+# Run the calculator
+scientific_calculator()
