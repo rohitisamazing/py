@@ -1,0 +1,20 @@
+import string
+
+def analyze_reviews(reviews):
+    # Remove punctuations and convert to lowercase
+    reviews = reviews.translate(str.maketrans('', '', string.punctuation)).lower()
+
+    # Split reviews into words
+    words = reviews.split()
+
+    # Analyze words
+    if 'good' in words or 'great' in words:
+        print("Positive review")
+    elif 'bad' in words or 'horrible' in words:
+        print("Negative review")
+    else:
+        print("Neutral review")
+
+# Example usage
+customer_reviews = "The product is Great! I had a really good experience."
+analyze_reviews(customer_reviews)
