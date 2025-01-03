@@ -1,0 +1,10 @@
+def remove_occurrences(lst, element):
+    return [item for item in lst if item != element]
+    
+def count_occurrences(lst, element):
+    return lst.count(element)    
+
+lst = [1, 2, 3, 4, 3, 3, 5]
+element = 3
+print(f"The element {element} occurs {count_occurrences(lst, element)} times.")
+print("List after removing occurrences:", remove_occurrences(lst, element))
